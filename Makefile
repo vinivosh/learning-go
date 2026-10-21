@@ -8,4 +8,7 @@ fmt:
 fmtlint: fmt lint
 
 test:
+	go test ./...
+
+testv:
 	go test -v ./...
