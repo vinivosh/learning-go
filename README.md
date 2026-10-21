@@ -7,7 +7,7 @@ Just a simple repository with exercises and projects I did in a journey to maste
 
 ## Alex Mux' tutorial
 
-Exercises from Learn [**GO Fast: Full Tutorial**](https://www.youtube.com/watch?v=8uiZC0l4Ajw), by *Alex Mux*.
+Exercises from Learn [**GO Fast: Full Tutorial**](https://www.youtube.com/watch?v=8uiZC0l4Ajw), by [*Alex Mux*](https://www.youtube.com/@mr_mux408).
 
 
 
