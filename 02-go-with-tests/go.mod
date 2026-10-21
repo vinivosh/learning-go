@@ -1,3 +1,3 @@
 module example.com/learn
 
-go 1.26.1
+go 1.27.3
