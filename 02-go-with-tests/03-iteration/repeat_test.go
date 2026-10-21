@@ -6,8 +6,8 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	got := Repeat("a")
-	want := "aaaaa"
+	got := Repeat("a", 7)
+	want := "aaaaaaa"
 
 	if got != want {
 		t.Errorf("expected %q, but got %q", want, got)
@@ -16,6 +16,6 @@ func TestRepeat(t *testing.T) {
 
 func BenchmarkRepeat(b *testing.B) {
 	for b.Loop() {
-		Repeat("a")
+		Repeat("abcdefghij", 100)
 	}
 }
