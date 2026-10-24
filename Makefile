@@ -12,3 +12,9 @@ test:
 
 testv:
 	go test -v ./...
+
+cover:
+	go test -cover ./...
+
+coverv:
+	go test -v -cover ./...
