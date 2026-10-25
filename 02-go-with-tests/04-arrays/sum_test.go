@@ -37,3 +37,23 @@ func TestSumAll(t *testing.T) {
 		}
 	})
 }
+
+func TestSumAllTails(t *testing.T) {
+	t.Run("should sum a collection of N slices excluding the first item of each, and returning N results", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2}, []int{3, 4, 5}, []int{0, 0})
+		want := []int{2, 9, 0}
+
+		if !slices.Equal(got, want) {
+			t.Errorf("got %#v want %#v", got, want)
+		}
+	})
+
+	t.Run("should return N zeroes for a collection of N empty slices", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{}, []int{})
+		want := []int{0, 0}
+
+		if !slices.Equal(got, want) {
+			t.Errorf("got %#v want %#v", got, want)
+		}
+	})
+}
