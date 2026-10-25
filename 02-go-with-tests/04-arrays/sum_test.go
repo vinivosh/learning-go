@@ -18,23 +18,26 @@ func TestSum(t *testing.T) {
 	})
 }
 
+func CheckSums(t *testing.T, got, want []int) {
+	t.Helper()
+	if !slices.Equal(got, want) {
+		t.Errorf("got %#v want %#v", got, want)
+	}
+}
+
 func TestSumAll(t *testing.T) {
 	t.Run("should sum a collection of N slices, returning N results", func(t *testing.T) {
 		got := SumAll([]int{1, 2, 3}, []int{4, 5, 6, 7}, []int{8, 9}, []int{0, 0, 0})
 		want := []int{6, 22, 17, 0}
 
-		if !slices.Equal(got, want) {
-			t.Errorf("got %#v want %#v", got, want)
-		}
+		CheckSums(t, got, want)
 	})
 
 	t.Run("should return N zeroes for a collection of N empty slices", func(t *testing.T) {
 		got := SumAll([]int{}, []int{}, []int{})
 		want := []int{0, 0, 0}
 
-		if !slices.Equal(got, want) {
-			t.Errorf("got %#v want %#v", got, want)
-		}
+		CheckSums(t, got, want)
 	})
 }
 
@@ -43,17 +46,13 @@ func TestSumAllTails(t *testing.T) {
 		got := SumAllTails([]int{1, 2}, []int{3, 4, 5}, []int{6, 0})
 		want := []int{2, 9, 0}
 
-		if !slices.Equal(got, want) {
-			t.Errorf("got %#v want %#v", got, want)
-		}
+		CheckSums(t, got, want)
 	})
 
 	t.Run("should also work with empty slices", func(t *testing.T) {
 		got := SumAllTails([]int{7, 8, 9}, []int{}, []int{}, []int{5, 6})
 		want := []int{17, 0, 0, 6}
 
-		if !slices.Equal(got, want) {
-			t.Errorf("got %#v want %#v", got, want)
-		}
+		CheckSums(t, got, want)
 	})
 }
