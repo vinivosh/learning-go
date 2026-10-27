@@ -3,7 +3,12 @@ package main
 import "math"
 
 type Shape interface {
+	// Perimeter returns the perimeter of the Shape.
+	//
+	// The case for triangles is simplified: it assumes an isosceles or equilateral triangle. A scalene triangle DOES NOT work!
 	Perimeter() float64
+
+	// Area returns the area of the Shape
 	Area() float64
 }
 
