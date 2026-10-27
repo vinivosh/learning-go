@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestPerimeter(t *testing.T) {
-	t.Run("should calculate the area of a rectangle", func(t *testing.T) {
+	t.Run("should calculate the perimeter of a rectangle", func(t *testing.T) {
 		rectangle := Rectangle{10.0, 10.0}
 		got := rectangle.Perimeter()
 		want := 40.0
@@ -13,10 +13,10 @@ func TestPerimeter(t *testing.T) {
 		}
 	})
 
-	t.Run("should calculate the area of a circle", func(t *testing.T) {
+	t.Run("should calculate the perimeter of a circle (a.k.a. its circumference)", func(t *testing.T) {
 		circle := Circle{6.0}
 		got := circle.Perimeter()
-		want := 40.0
+		want := 37.69911184307752
 
 		if got != want {
 			t.Errorf("got %g want %g", got, want)
@@ -38,7 +38,7 @@ func TestArea(t *testing.T) {
 	t.Run("should calculate the area of a circle", func(t *testing.T) {
 		circle := Circle{7.0}
 		got := circle.Area()
-		want := 21.9911485751285
+		want := 153.93804002589985
 
 		if got != want {
 			t.Errorf("got %g want %g", got, want)

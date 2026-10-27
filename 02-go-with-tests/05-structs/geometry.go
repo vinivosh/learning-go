@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 type Rectangle struct {
 	Width  float64
 	Height float64
@@ -14,7 +16,7 @@ func (r Rectangle) Perimeter() float64 {
 }
 
 func (c Circle) Perimeter() float64 {
-	return (c.Radius) * 2.0
+	return 2.0 * math.Pi * (c.Radius)
 }
 
 func (r Rectangle) Area() float64 {
@@ -22,5 +24,5 @@ func (r Rectangle) Area() float64 {
 }
 
 func (c Circle) Area() float64 {
-	return c.Radius
+	return math.Pi * c.Radius * c.Radius
 }
