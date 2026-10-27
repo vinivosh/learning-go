@@ -1,9 +1,26 @@
 package main
 
-func Perimeter(rectangle Rectangle) float64 {
-	return (rectangle.Width + rectangle.Height) * 2.0
+type Rectangle struct {
+	Width  float64
+	Height float64
 }
 
-func Area(rectangle Rectangle) float64 {
-	return rectangle.Width * rectangle.Height
+type Circle struct {
+	Radius float64
+}
+
+func (r Rectangle) Perimeter() float64 {
+	return (r.Width + r.Height) * 2.0
+}
+
+func (c Circle) Perimeter() float64 {
+	return (c.Radius) * 2.0
+}
+
+func (r Rectangle) Area() float64 {
+	return r.Width * r.Height
+}
+
+func (c Circle) Area() float64 {
+	return c.Radius
 }
