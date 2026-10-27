@@ -10,6 +10,7 @@ func TestPerimeter(t *testing.T) {
 	}{
 		{"should calculate the perimeter of a rectangle", Rectangle{10.0, 10.0}, 40.0},
 		{"should calculate the perimeter of a circle", Circle{6.0}, 37.69911184307752},
+		{"should calculate the perimeter of a triangle", Triangle{4.0, 5.0}, 14.77032961426901},
 	}
 
 	for _, tt := range perimeterTests {
@@ -30,6 +31,7 @@ func TestArea(t *testing.T) {
 	}{
 		{"should calculate the area of a rectangle", Rectangle{12.0, 6.0}, 72.0},
 		{"should calculate the area of a circle", Circle{7.0}, 153.93804002589985},
+		{"should calculate the area of a triangle", Triangle{12.0, 6.0}, 36.0},
 	}
 
 	for _, tt := range areaTests {
