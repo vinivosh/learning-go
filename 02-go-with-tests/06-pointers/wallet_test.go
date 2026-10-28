@@ -5,17 +5,43 @@ import (
 	"testing"
 )
 
+func TestBitcoin(t *testing.T) {
+	t.Run("should stringify Bitcoin", func(t *testing.T) {
+		btc := Bitcoin(10)
+		got := btc.String()
+		want := "10 BTC"
+
+		if got != want {
+			t.Errorf("got %s want %s", got, want)
+		}
+	})
+}
+
 func TestWallet(t *testing.T) {
+	t.Run("Deposit", func(t *testing.T) {
+		wallet := Wallet{}
+		fmt.Printf("address of balance in test is %p \n", &wallet.balance)
 
-	wallet := Wallet{}
-	fmt.Printf("address of balance in test is %p \n", &wallet.balance)
+		wallet.Deposit(Bitcoin(10))
 
-	want := 10
-	wallet.Deposit(want)
+		want := Bitcoin(10)
+		got := wallet.Balance()
 
-	got := wallet.Balance()
+		if got != want {
+			t.Errorf("got %s want %s", got, want)
+		}
+	})
 
-	if got != want {
-		t.Errorf("got %d want %d", got, want)
-	}
+	t.Run("Withdraw", func(t *testing.T) {
+		wallet := Wallet{balance: Bitcoin(50)}
+		wallet.Withdraw(Bitcoin(20))
+
+		want := Bitcoin(30)
+		got := wallet.Balance()
+
+		if got != want {
+			t.Errorf("got %s want %s", got, want)
+		}
+	})
+
 }
